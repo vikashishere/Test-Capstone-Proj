@@ -1,3 +1,5 @@
+-------------------------Setting up project structure---------------------------
+
 1. Create repo, clone it in local
 2. Create a virtual environment named 'atlas' - conda create -n atlas python=3.10
 3. Activate the virtual environment - conda activate atlas
@@ -5,3 +7,28 @@
 5. cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
 6. Rename src.models -> src.model
 7. git add - commit - push
+
+-------------------------Setup MLFlow on Dagshub---------------------------
+8. Go to: https://dagshub.com/dashboard
+9. Create > New Repo > Connect a repo > (Github) Connect > Select your repo > Connect
+10. Copy experiment tracking url and code snippet. (Also try: Go To MLFlow UI)
+11. pip install dagshub & mlflow
+
+12. Run the exp notebooks
+13. git add - commit - push
+
+14. dvc init
+15. open a new cmd terminal and do - echo %TEMP% (copy the temp folder location)
+C:\Users\Personal\AppData\Local\Temp
+16. dvc remote add -d myremote C:\Users\Personal\AppData\Local\Temp
+17. Add code to below files inside src dir:
+    - data_ingestion.py
+    - data_preprocessing.py
+    - feature_engineering.py
+    - model_building.py
+    - model_evaluation.py
+18. add file - dvc.yaml (till model evaluation.metrics)
+19. add file - params.yaml
+20. DVC pipeline is ready to run - dvc repro
+21. Once do - dvc status
+22. git add - commit - push
