@@ -30,7 +30,6 @@ mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 # dagshub.init(repo_owner='vikashdas770', repo_name='Test-Capstone-Proj', mlflow=True)
 # -------------------------------------------------------------------------------------
 
-capstone_test
 # logging configuration
 logger = logging.getLogger('model_registration')
 logger.setLevel('DEBUG')
