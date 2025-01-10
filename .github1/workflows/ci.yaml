@@ -29,26 +29,26 @@ jobs:
 
       - name: run pipeline
         env:
-          DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
+          capstone_test: ${{ secrets.capstone_test }}
         run: |
           dvc repro
 
       - name: Run model tests
         env:
-          DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
+          capstone_test: ${{ secrets.capstone_test }}
         run: |
           python -m unittest tests/test_model.py
 
       - name: Promote model to production
         if: success()
         env:
-          DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
+          capstone_test: ${{ secrets.capstone_test }}
         run: python scripts/promote_model.py
 
       - name: Run Flask app tests
         if: success()
         env:
-          DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
+          capstone_test: ${{ secrets.capstone_test }}
         run: python -m unittest tests/test_flask_app.py
 
       - name: Login to AWS ECR

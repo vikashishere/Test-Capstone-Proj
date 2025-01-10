@@ -42,7 +42,12 @@ C:\Users\Personal\AppData\Local\Temp
 
 
 28. Create new dir - flask-app | Inside that, add rest of the files and dir
-29. pip install flask and run the app
+29. pip install flask and run the app (dvc push - to push data to S3)
 
 
-30. Add .github/workflows/ci.yaml file
+30. pip freeze > requirements.txt
+31. Add .github/workflows/ci.yaml file
+
+32. Create key token on Dagshub for auth: Go to dagshub repo > Your settings > Tokens > Generate new token
+    >> Please make sure to save token << >>capstone_test: c66ab045ebc33b766af2977667cd5868025d9f74<<
+    >> Add this auth token to github secret&var and update on ci file
