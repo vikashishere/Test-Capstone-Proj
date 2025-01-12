@@ -41,7 +41,7 @@ C:\Users\Personal\AppData\Local\Temp
 27. Add s3 as dvc remote storage - dvc remote add -d myremote s3://<bucket-name>
 
 
-28. Create new dir - flask-app | Inside that, add rest of the files and dir
+28. Create new dir - flask_app | Inside that, add rest of the files and dir
 29. pip install flask and run the app (dvc push - to push data to S3)
 
 
@@ -51,3 +51,6 @@ C:\Users\Personal\AppData\Local\Temp
 32. Create key token on Dagshub for auth: Go to dagshub repo > Your settings > Tokens > Generate new token
     >> Please make sure to save token << >>capstone_test: c66ab045ebc33b766af2977667cd5868025d9f74<<
     >> Add this auth token to github secret&var and update on ci file
+
+
+31. Add dir "tests" and files within. This will contain our test related scripts for CI.

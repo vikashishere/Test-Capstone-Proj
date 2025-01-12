@@ -45,11 +45,11 @@ jobs:
           capstone_test: ${{ secrets.capstone_test }}
         run: python scripts/promote_model.py
 
-      # - name: Run Flask app tests
-      #   if: success()
-      #   env:
-      #     capstone_test: ${{ secrets.capstone_test }}
-      #   run: python -m unittest tests/test_flask_app.py
+      - name: Run Flask app tests
+        if: success()
+        env:
+          capstone_test: ${{ secrets.capstone_test }}
+        run: python -m unittest tests/test_flask_app.py
 
       # - name: Login to AWS ECR
       #   if: success()
