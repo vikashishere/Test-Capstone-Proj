@@ -109,7 +109,8 @@ model_version = get_latest_model_version(model_name)
 model_uri = f'models:/{model_name}/{model_version}'
 model = mlflow.pyfunc.load_model(model_uri)
 
-vectorizer = pickle.load(open('../models/vectorizer.pkl','rb'))
+# vectorizer = pickle.load(open('../models/vectorizer.pkl','rb'))
+vectorizer = pickle.load(open('models/vectorizer.pkl','rb'))
 
 @app.route('/')
 def home():
